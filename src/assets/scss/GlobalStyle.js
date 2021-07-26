@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   :root {
+    --brandBlack: #0F0F0F;
     --brandPink: #FF00E4;
     --brandPurple: #9A35EF;
     --brandBlue: #4176D6;
@@ -16,9 +17,11 @@ export const GlobalStyle = createGlobalStyle`
     --maxWidth: 1920px;
   }
 
+  ion-icon { zoom: 1.5 }
+
+
   .globalPadding {
     padding: 0 1rem;
-    border: 2px solid red;
     @media (min-width: 768px) {
       padding: 0 1.25rem;
     }

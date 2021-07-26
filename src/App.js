@@ -20,7 +20,6 @@ const App = () => {
       <GlobalStyle />
       <StyledApp>
         <Header />
-        <main className="globalPadding">content</main>
       </StyledApp>
     </div>
   );
