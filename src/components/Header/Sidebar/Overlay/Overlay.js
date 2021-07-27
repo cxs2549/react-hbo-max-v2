@@ -14,6 +14,9 @@ const StyledOverlay = styled.div`
   @media (min-width: 640px) {
     left: 60px;
   }
+  @media (min-width: 1280px) {
+    left: 0;
+  }
 `
 
 const Overlay = ({open, clicked}) => {

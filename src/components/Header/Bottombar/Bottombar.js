@@ -37,22 +37,22 @@ const StyledBottombar = styled.div`
 	}
 
 	.active {
-		color: var(--brandPink);
+		color: var(--brandPurple);
 		opacity: 1;
 	}
 `
 
-const Bottombar = () => {
+const Bottombar = ({clicked}) => {
 	return (
 		<StyledBottombar className="globalPadding">
 			<div id="holder">
-				<NavLink to="/" end>
+				<NavLink to="/" end onClick={clicked}>
 					<ion-icon activeClassName="active" id="icon" name="home-outline" />
 				</NavLink>
-				<NavLink to="/search" activeClassName="active">
+				<NavLink to="/search" activeClassName="active" onClick={clicked}>
 					<ion-icon id="icon" name="search-outline" />
 				</NavLink>
-				<NavLink to="/account" activeClassName="active">
+				<NavLink to="/account" activeClassName="active" onClick={clicked}>
 					<ion-icon id="icon" name="person-outline" />
 				</NavLink>
 			</div>

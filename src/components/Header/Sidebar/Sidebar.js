@@ -37,7 +37,7 @@ const StyledSidebar = styled.div`
     opacity: 0.75;
   }
   .active {
-    color: var(--brandPink);
+    color: var(--brandPurple);
     opacity: 1;
   }
 `;

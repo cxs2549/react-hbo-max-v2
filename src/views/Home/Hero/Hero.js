@@ -19,30 +19,40 @@ const StyledHero = styled.div`
 	@media (min-width: 1280px) {
 		height: 65vh;
 	}
+	@media (min-width: 1536px) {
+		height: 90vh;
+	}
+	transition: 500ms;
 	#image {
 		background-image: url(${hero});
 		background-size: cover;
 		background-position: center;
 		height: 100%;
 		width: 100%;
-		transition: 500ms;
+		img {
+			transition: 500ms;
+
+		}
 	}
 	#overlay {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-image: linear-gradient(to bottom, transparent 22%, var(--heroBG) 100%);
+		background-image: linear-gradient(to bottom, transparent 40%, var(--heroBG) 100%);
 		bottom: 0;
-		/* display: none; */
 	}
 	#text {
 		position: absolute;
 		left: 1rem;
 		bottom: -5rem;
 		color: white;
+		transition: 400ms;
 		@media (min-width: 768px) {
 			left: 1.5rem;
 			bottom: -4rem;
+		}
+		@media (min-width: 1536px) {
+			bottom: 0;
 		}
 		h2 {
 			text-transform: uppercase;
@@ -79,25 +89,33 @@ const StyledHero = styled.div`
 			align-items: center;
 			button:first-child {
 				border-radius: 99999px;
-				height: 40px;
-				width: 40px;
+				height: 48px;
+				width: 48px;
 				display: grid;
 				place-items: center;
-				/* background-color: var(--brandPurple); */
 				margin-right: 1rem;
 				border: 2px solid var(--brandPurple);
 				color: white;
 				background-color: transparent;
+			
+				&:hover {
+					ion-icon {
+						color: white;
+					}
+				}
 			}
+
 			ion-icon {
 				font-size: 28px;
 				margin-left: 3px;
+				color: #fffffff3;
 				@media (min-width: 1280px) {
 					font-size: 32px;
 				}
 			}
 		}
 		button {
+			box-shadow: 0px 0px 5px #f7e7ff64;
 			text-transform: uppercase;
 			border: none;
 			font-weight: 700;
@@ -106,20 +124,25 @@ const StyledHero = styled.div`
 			white-space: nowrap;
 			font-size: 0.75rem;
 			cursor: pointer;
+			transition: 400ms;
 			@media (min-width: 768px) {
 				font-size: 0.9rem;
 			}
 			@media (min-width: 1280px) {
 				font-size: 1rem;
 			}
+			&:hover {
+				box-shadow: 0px 0px 5px #f1deffd0;
+			}
+		
 			&:last-child {
 				padding: 0.6em 1.5em 0.7em;
 				border-radius: 99999px;
-				color: white;
+				color: #ffffffe0;
 				border: 2px solid var(--brandPurple);
 				background-color: transparent;
 				transition: opacity 400ms;
-				height: 40px;
+				height: 48px;
 				&:hover {
 					opacity: 0.9;
 				}
@@ -135,7 +158,7 @@ const Hero = () => {
 			<div id="overlay" />
 			<div id="text">
 				<h1>
-					Space Jam: <br /> A New Legacy
+					Space Jam<br /> A New Legacy
 				</h1>
 				<h2>Now playing</h2>
 				<p>

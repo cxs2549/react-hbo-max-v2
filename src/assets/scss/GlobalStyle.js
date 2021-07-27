@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -15,23 +15,31 @@ export const GlobalStyle = createGlobalStyle`
     --brandYellow: #FBF9D3;
     --muted: #3C3C3C;
 
-    --heroBG: black;
+    --heroBG: #000000;
     --maxWidth: 1920px;
+  }
+
+  #root {
+    scrollbar-width: none;
+    overflow-y: scroll;
   }
 
   
   body {
+    scrollbar-width: none;
+    overflow: hidden;
     background-color: #000;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
+
   }
 
   .modal-open {
     overflow: hidden;
   }
 
-  ion-icon { zoom: 1.5 }
+
 
   a {
     text-decoration: none;
@@ -58,7 +66,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    /* margin-top: 60px; */
     position: relative;
     z-index: 1;
   }
@@ -110,4 +117,4 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
   
-`
+`;
