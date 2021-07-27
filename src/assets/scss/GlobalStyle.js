@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     --brandYellow: #FBF9D3;
     --muted: #3C3C3C;
 
-    --heroBG: #36096D;
+    --heroBG: black;
     --maxWidth: 1920px;
   }
 
@@ -76,7 +76,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 2.2rem;
       }
       @media (min-width: 1280px) {
-        font-size: 300%;
+        font-size: 290%;
         line-height: 1;
         padding-bottom: 0.5rem;
         text-shadow: 1px 1px 1px #6d2b63;
@@ -105,7 +105,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     @media (min-width: 1340px) {
       padding: 0;
-      padding-bottom: .7rem;
+      padding-bottom: .4rem;
     }
 	}
 

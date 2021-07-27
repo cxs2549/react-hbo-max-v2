@@ -10,6 +10,7 @@ const StyledSidebar = styled.div`
   width: 60px;
   background-color: var(--brandBlack);
   z-index: 10;
+  border-right: 1px solid var(--muted);
   @media (min-width: 640px) {
     display: flex;
   }

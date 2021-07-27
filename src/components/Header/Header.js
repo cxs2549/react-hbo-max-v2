@@ -10,7 +10,6 @@ import Overlay from './Sidebar/Overlay/Overlay'
 const StyledHeader = styled.header`
 	display: flex;
 	align-items: center;
-	/* position: fixed; */
 	top: 0;
 	left: 0;
 	height: 60px;
@@ -36,6 +35,7 @@ const StyledHeader = styled.header`
 		padding: 0 1rem;
 		z-index: 100;
 		background-color: var(--brandBlack);
+		border-bottom: 1px solid var(--muted);
 		#logoContainer {
 			position: absolute;
 			left: 50%;

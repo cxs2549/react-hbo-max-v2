@@ -2,55 +2,48 @@ import styled from 'styled-components'
 import hero from '../../../assets/hero.png'
 
 const StyledHero = styled.div`
-	height: 42vh;
+	height: 30vh;
 	position: relative;
+	margin-bottom: 7rem;
 	@media (min-width: 640px) {
-		height: 49vh;
+		height: 37vh;
+		margin-bottom: 8rem;
 	}
 	@media (min-width: 768px) {
-		height: 60vh;
+		height: 50vh;
+	}
+	@media (min-width: 1024px) {
+		height: 56vh;
+		margin-bottom: 7rem;
 	}
 	@media (min-width: 1280px) {
-		height: 81vh;
+		height: 65vh;
 	}
 	#image {
 		background-image: url(${hero});
 		background-size: cover;
-		background-position: center center;
-		height: 30vh;
-		position: relative;
-        @media (min-width: 640px) {
-            height: 35vh;
-        }
-		@media (min-width: 768px) {
-			height: 50vh;
-		}
-		@media (min-width: 1280px) {
-			height: 74vh;
-		}
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 20%;
-			background-image: linear-gradient(to top, var(--heroBG), transparent);
-		}
+		background-position: center;
+		height: 100%;
+		width: 100%;
+		transition: 500ms;
 	}
 	#overlay {
 		position: absolute;
 		width: 100%;
-		height: 70%;
-		background-image: linear-gradient(to top, var(--heroBG) 20%, transparent 100%);
-		bottom: 3rem;
+		height: 100%;
+		background-image: linear-gradient(to bottom, transparent 22%, var(--heroBG) 100%);
+		bottom: 0;
 		/* display: none; */
 	}
 	#text {
 		position: absolute;
 		left: 1rem;
-		bottom: 0;
+		bottom: -5rem;
 		color: white;
+		@media (min-width: 768px) {
+			left: 1.5rem;
+			bottom: -4rem;
+		}
 		h2 {
 			text-transform: uppercase;
 			font-size: 0.9rem;
@@ -82,12 +75,33 @@ const StyledHero = styled.div`
 		}
 		#buttons {
 			margin-top: 24px;
+			display: flex;
+			align-items: center;
+			button:first-child {
+				border-radius: 99999px;
+				height: 40px;
+				width: 40px;
+				display: grid;
+				place-items: center;
+				/* background-color: var(--brandPurple); */
+				margin-right: 1rem;
+				border: 2px solid var(--brandPurple);
+				color: white;
+				background-color: transparent;
+			}
+			ion-icon {
+				font-size: 28px;
+				margin-left: 3px;
+				@media (min-width: 1280px) {
+					font-size: 32px;
+				}
+			}
 		}
 		button {
 			text-transform: uppercase;
+			border: none;
 			font-weight: 700;
 			letter-spacing: 0.15em;
-			padding: 0.6em 1.5em 0.6em;
 			width: max-content;
 			white-space: nowrap;
 			font-size: 0.75rem;
@@ -98,17 +112,14 @@ const StyledHero = styled.div`
 			@media (min-width: 1280px) {
 				font-size: 1rem;
 			}
-			&:first-child {
-				position: relative;
-				z-index: 500;
-				transition: all 400ms;
-				&:hover {
-					border-color: #ff00e3;
-				}
-			}
 			&:last-child {
-				background-color: #c21bd8;
+				padding: 0.6em 1.5em 0.7em;
+				border-radius: 99999px;
+				color: white;
+				border: 2px solid var(--brandPurple);
+				background-color: transparent;
 				transition: opacity 400ms;
+				height: 40px;
 				&:hover {
 					opacity: 0.9;
 				}
@@ -130,9 +141,9 @@ const Hero = () => {
 				<p>
 					In theaters and on HBO Max. Streaming <br /> through Aug 15.
 				</p>
-				<div id="buttons" className="text-sm flex space-x-4 mt-6">
-					<button className="border-2  rounded-full uppercase font-semibold flex items-center space-x-1">
-						<h4>watch</h4>
+				<div id="buttons">
+					<button>
+						<ion-icon name="play-outline" />
 					</button>
 					<button className="rounded-full uppercase font-semibold inline">
 						more info

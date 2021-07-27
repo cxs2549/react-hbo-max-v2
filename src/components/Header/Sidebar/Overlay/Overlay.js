@@ -5,6 +5,7 @@ const StyledOverlay = styled.div`
   top: 60px;
   left: 0;
   opacity: ${(props) => (props.open ? 1 : 0)};
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
   width: 100%;
   height: 100vh;
   background-color: rgba(0,0,0,0.5);

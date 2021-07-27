@@ -26,9 +26,13 @@ import {
 
 const StyledLists = styled.div`
 	padding: 0 1rem;
-	padding-top: 1.75rem;
+	/* padding-top: 1.75rem; */
 	color: white;
 	max-width: 100%;
+	/* display: none; */
+	@media (min-width: 768px) {
+		padding: 0 1.5rem;
+	}
 	#gallery {
 		margin-top: .5rem;
 		display: flex;
@@ -40,6 +44,10 @@ const StyledLists = styled.div`
 		> div {
 			max-width: 48%;
 			min-width: 48%;
+			@media (min-width: 768px) {
+				max-width: 20%;
+				min-width: 20%;
+			}
 		}
 		img {
 			max-width: 100%;
@@ -48,9 +56,9 @@ const StyledLists = styled.div`
 `
 
 const Lists = () => {
-	const justAdded = [ cover1, cover2, cover3 ]
-	const popular = [ cover4, cover5, cover6 ]
-    const newEps = [cover7, cover8, cover9]
+	const justAdded = [ cover1, cover2, cover3, cover9, cover11, cover18 ]
+	const popular = [ cover4, cover5, cover6, cover8, cover7, cover13 ]
+    const newEps = [cover7, cover8, cover9, cover10, cover17, cover12]
 	return (
 		<StyledLists>
 			<List title="just added" images={justAdded} />
