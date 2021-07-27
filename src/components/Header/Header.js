@@ -24,6 +24,7 @@ const StyledHeader = styled.header`
     left: 0;
     width: 100%;
     height: 60px;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -55,7 +56,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <StyledHeader>
-      <nav className="globalPadding">
+      <nav>
         <div onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <ion-icon id="icon" name="close-outline" size="large"></ion-icon>

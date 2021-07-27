@@ -5,13 +5,13 @@ const StyledDrawer = styled.div`
   left: ${(props) => (props.open ? 0 : "-100%")};
   top: 60px;
   width: 75%;
+  max-width: 370px;
   height: 100%;
   background-color: var(--brandBlack);
   transition: left 400ms ease-in;
   z-index: 9;
   @media (min-width: 640px) {
     left: ${(props) => (props.open ? "56px" : "-100%")};
-    max-width: 400px;
   }
 `;
 
