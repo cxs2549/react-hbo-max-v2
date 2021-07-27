@@ -41,21 +41,21 @@ const StyledSidebar = styled.div`
   }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({clicked}) => {
   return (
     <StyledSidebar>
       <div id="holder">
-        <NavLink to="/" end>
+        <NavLink to="/" end onClick={clicked}>
           <ion-icon
             activeClassName="active"
             id="icon"
             name="home-outline"
           ></ion-icon>
         </NavLink>
-        <NavLink to="/search" activeClassName="active">
+        <NavLink to="/search" activeClassName="active" onClick={clicked}>
           <ion-icon id="icon" name="search-outline"></ion-icon>
         </NavLink>
-        <NavLink to="/account" activeClassName="active">
+        <NavLink to="/account" activeClassName="active" onClick={clicked}>
           <ion-icon id="icon" name="person-outline"></ion-icon>
         </NavLink>
       </div>
