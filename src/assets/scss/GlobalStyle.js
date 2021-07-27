@@ -12,12 +12,26 @@ export const GlobalStyle = createGlobalStyle`
     --brandPink: #FF00E4;
     --brandPurple: #9A35EF;
     --brandBlue: #4176D6;
+    --brandYellow: #FBF9D3;
     --muted: #3C3C3C;
 
     --maxWidth: 1920px;
   }
 
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+
   ion-icon { zoom: 1.5 }
+
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
 
 
   .globalPadding {
