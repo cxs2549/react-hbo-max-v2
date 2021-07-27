@@ -27,6 +27,7 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1rem;
     #logoContainer {
       position: absolute;
       left: 50%;
@@ -55,13 +56,18 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <StyledHeader>
-      <nav className="globalPadding">
-        <div onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
-            <ion-icon id="icon" name="close-outline" size="large"></ion-icon>
-          ) : (
-            <ion-icon id="icon" name="menu-outline" size="large"></ion-icon>
-          )}
+      <nav className="">
+        <div>
+          <div onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? (
+              <ion-icon id="icon" name="close-outline" size="large"></ion-icon>
+            ) : (
+              <ion-icon id="icon" name="menu-outline" size="large"></ion-icon>
+            )}
+          </div>
+          <div>
+
+          </div>
         </div>
         <div id="logoContainer">
           <img src={logo} alt="" />
@@ -69,7 +75,7 @@ const Header = () => {
         {/* <div>right</div> */}
       </nav>
       <Sidebar />
-      <Drawer open={isOpen} />
+      <Drawer open={isOpen} clicked={() => setIsOpen(false)} />
       <Overlay open={isOpen} clicked={() => setIsOpen(false)} />
       <Bottombar />
     </StyledHeader>

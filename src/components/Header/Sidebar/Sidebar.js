@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledSidebar = styled.div`
@@ -12,19 +13,31 @@ const StyledSidebar = styled.div`
   @media (min-width: 640px) {
     display: flex;
   }
+  @media (min-width: 1536px) {
+    display: none;
+  }
 
   #holder {
-    padding-top: 1.6rem;
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 2.5rem;
     height: 100%;
     margin: 0 auto;
   }
 
-  ion-icon {
+  a {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
+    height: 100%;
+    min-height: 60px;
+    max-height: 60px;
+    color: white;
+    opacity: 0.75;
+  }
+  .active {
+    color: var(--brandPink);
+    opacity: 1;
   }
 `;
 
@@ -32,9 +45,19 @@ const Sidebar = () => {
   return (
     <StyledSidebar>
       <div id="holder">
-        <ion-icon id="icon" name="home-outline"></ion-icon>
-        <ion-icon id="icon" name="search-outline"></ion-icon>
-        <ion-icon id="icon" name="person-outline"></ion-icon>
+        <NavLink to="/" end>
+          <ion-icon
+            activeClassName="active"
+            id="icon"
+            name="home-outline"
+          ></ion-icon>
+        </NavLink>
+        <NavLink to="/search" activeClassName="active">
+          <ion-icon id="icon" name="search-outline"></ion-icon>
+        </NavLink>
+        <NavLink to="/account" activeClassName="active">
+          <ion-icon id="icon" name="person-outline"></ion-icon>
+        </NavLink>
       </div>
     </StyledSidebar>
   );
