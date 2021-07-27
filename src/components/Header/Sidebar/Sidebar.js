@@ -56,7 +56,7 @@ const Sidebar = ({clicked}) => {
         <NavLink to="/search" activeClassName="active" onClick={clicked}>
           <ion-icon id="icon" name="search-outline"></ion-icon>
         </NavLink>
-        <NavLink to="/account" activeClassName="active" onClick={clicked}>
+        <NavLink to="account" activeClassName="active" onClick={clicked}>
           <ion-icon id="icon" name="person-outline"></ion-icon>
         </NavLink>
       </div>

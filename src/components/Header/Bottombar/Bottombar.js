@@ -52,7 +52,7 @@ const Bottombar = ({clicked}) => {
 				<NavLink to="/search" activeClassName="active" onClick={clicked}>
 					<ion-icon id="icon" name="search-outline" />
 				</NavLink>
-				<NavLink to="/account" activeClassName="active" onClick={clicked}>
+				<NavLink to="account" activeClassName="active" onClick={clicked}>
 					<ion-icon id="icon" name="person-outline" />
 				</NavLink>
 			</div>

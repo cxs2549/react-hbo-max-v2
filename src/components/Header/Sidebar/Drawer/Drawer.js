@@ -29,7 +29,7 @@ const StyledDrawer = styled.div`
 	scrollbar-width: none;
 	@media (min-width: 640px) {
 		left: ${(props) => (props.open ? '60px' : '-100%')};
-		min-width: 370px;
+		/* padding-bottom: 60px; */
 	}
 	@media (min-width: 1536px) {
 		left: ${(props) => (props.open ? 0 : '-100%')};
@@ -168,7 +168,7 @@ const Drawer = ({ open, clicked }) => {
 						</li>
 					))}
 					{links2.map((link, i) => (
-						<li key={i}>
+						<li key={i} onClick={clicked}>
 							<NavLink to={`outofscope/${link.replace(/ /g, '_')}`}>{link}</NavLink>
 						</li>
 					))}

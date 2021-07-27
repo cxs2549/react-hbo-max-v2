@@ -15,8 +15,6 @@ import {
   cover11,
   cover12,
   cover13,
-  cover14,
-  cover15,
   cover16,
   cover17,
   cover18,
@@ -36,7 +34,7 @@ const StyledLists = styled.div`
 `;
 
 const Lists = () => {
-  const justAdded = [cover1, cover8, cover13, cover20, cover11, cover18];
+  const justAdded = [cover1, cover8, cover13, cover20, cover11, cover18, cover3, cover5];
   const popular = [cover9, cover16, cover6, cover19, cover7, cover13];
   const newEps = [cover2, cover4, cover18, cover10, cover17, cover12];
   return (

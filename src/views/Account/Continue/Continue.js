@@ -1,4 +1,4 @@
-import { cover3, cover18, cover16, cover7, cover13 } from "../../../assets/art";
+import { cover3, cover18, cover16, cover7, cover13, cover17 } from "../../../assets/art";
 import Page from "../Page/Page";
 
 
@@ -10,6 +10,7 @@ const Continue = () => {
     { image: cover16, title: "The Little Things", original: true, duration: "59%", year: 2021 },
     { image: cover7, title: "The Nanny", original: false, duration: "59%", year: 1993 },
     { image: cover13, title: "Tenet", original: false, duration: "59%", year: 2020 },
+    { image: cover17, title: "The White Lotus", original: false, duration: "9%", year: 2021 },
   ];
   return (
     <div>

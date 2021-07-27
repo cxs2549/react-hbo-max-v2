@@ -2,8 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledAccount = styled.div`
-  margin-bottom: 60px;
-  margin-top: 56px;
+  margin-top: 60px;
   color: white;
   position: relative;
   z-index: 1;
@@ -12,10 +11,8 @@ const StyledAccount = styled.div`
   height: 100%;
   padding-bottom: 60px;
   height: 100vh;
-  @media (min-width: 640px) {
-  }
   #wrapper {
-    max-width: 1300px;
+    max-width: var(--maxWidth);
     margin: 0 auto;
   }
   a {
@@ -36,29 +33,28 @@ const StyledAccount = styled.div`
       bottom: -9px;
       width: 100%;
       height: 3px;
-      background-color: #ff00e4;
+      background-color: var(--brandPurple);
     }
   }
   #top {
     padding: 0 1rem;
-    height: 250px;
-    position: relative;
+    height: auto;
     z-index: 2;
     max-width: 100%;
     margin: 0 auto;
-    padding-bottom: 12px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 60px;
+    background-color: black;
+    @media (min-width: 640px) {
+       width: calc(100vw - 60px);
+       left: 60px;
+     }
     @media (min-width: 768px) {
-      height: 300px;
-      margin-left: -56px;
       padding: 0 1.5rem;
     }
 
-    @media (min-width: 1280px) {
-      margin-left: 0;
-      padding: 0;
-    }
-    @media (min-width: 1367px) {
-    }
     #innerTop {
       border-color: #353549;
       height: 100%;
@@ -69,7 +65,7 @@ const StyledAccount = styled.div`
 
       @media (min-width: 768px) {
         top: 3.5rem;
-        height: 300px;
+       
       }
       span {
         font-size: 90%;
@@ -83,7 +79,7 @@ const StyledAccount = styled.div`
         padding-bottom: 2rem;
         height: 74px;
         @media (min-width: 768px) {
-          margin-left: 56px;
+         
         }
         @media (min-width: 1280px) {
           margin-left: 0;
@@ -103,6 +99,8 @@ const StyledAccount = styled.div`
         }
 				#sort {
 					margin-top: .5rem;
+          cursor: pointer;
+          opacity: .86;
 					> div {
 						display: flex;
 						align-items: center;
@@ -121,15 +119,17 @@ const StyledAccount = styled.div`
     justify-content: center;
     padding-bottom: 2.5rem;
     width: 100%;
-    @media (min-width: 1024px) {
-      margin-left: 30px;
+    padding-top: 2rem;
+    @media (min-width: 640px) {
+      margin-left: -30px;
     }
+   
     @media (min-width: 1280px) {
-      margin-left: 0;
+      
     }
     #circle {
-      height: 80px;
-      width: 80px;
+      height: 100px;
+      width: 100px;
       border: 2px solid white;
       border-radius: 99999px;
       display: flex;
@@ -141,9 +141,11 @@ const StyledAccount = styled.div`
       margin-top: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
+      cursor: pointer;
     }
   }
   #bottom {
+    margin-top: 300px;
     position: relative;
     z-index: 1;
   }

@@ -63,6 +63,9 @@ const StyledHeader = styled.header`
     }
     > div:first-child {
       margin-left: -3px;
+      @media (min-width: 640px) {
+        margin-left: 0;
+      }
     }
   }
 `;
