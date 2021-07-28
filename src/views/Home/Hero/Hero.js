@@ -20,7 +20,8 @@ const StyledHero = styled.div`
 		height: 65vh;
 	}
 	@media (min-width: 1536px) {
-		height: 90vh;
+		height: 94vh;
+		margin-bottom: 0;
 	}
 	transition: 500ms;
 	#image {
@@ -52,7 +53,7 @@ const StyledHero = styled.div`
 			bottom: -4rem;
 		}
 		@media (min-width: 1536px) {
-			bottom: 0;
+			bottom: 6rem;
 		}
 		h2 {
 			text-transform: uppercase;

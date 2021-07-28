@@ -24,7 +24,7 @@ const StyledPage = styled.div`
 	#wrapper {
 		display: grid;
 		grid-template-columns: 1.5fr 2fr;
-		gap: 1rem;
+		gap: .75rem;
 		padding-bottom: 2rem;
 		position: relative;
 		transition: 400ms;
@@ -32,6 +32,7 @@ const StyledPage = styled.div`
 			grid-template-columns: 2fr 1.5fr;
 		}
 		@media (min-width: 768px) {
+			gap: 1.25rem;
 			grid-template-columns: 1fr;
 		}
 	}
@@ -41,17 +42,19 @@ const StyledPage = styled.div`
 		&::after {
 			content: "";
 			position: absolute;
+			z-index: 0;
 			left: 0;
 			top: 0;
 			bottom: 0;
-			width: 100%;
+			width: 30%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0.2);
+			background-image: linear-gradient(to right, #0000009f, transparent);
 		}
 		#bgPlay {
 			position: absolute;
 			bottom: 3px;
 			left: 3px;
+			z-index: 2;
 			ion-icon {
 				color: var(--brandPurple);
 			}
@@ -60,6 +63,7 @@ const StyledPage = styled.div`
 			position: absolute;
 			bottom: 6px;
 			left: 0;
+			z-index: 2;
 		}
 	}
 	ion-icon {

@@ -41,7 +41,7 @@ const Lists = () => {
     <StyledLists>
       <List title="just added" images={justAdded} />
       <List title="popular movies" images={popular} size="24%" />
-      <List title="New Episodes this week" images={newEps} size="34%" />
+      <List title="New Episodes this week" images={newEps} size="32%" />
     </StyledLists>
   );
 };

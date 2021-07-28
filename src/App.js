@@ -16,11 +16,17 @@ const StyledApp = styled.div`
 	height: 100%;
 	scrollbar-width: none;
 	main {
+		
 		scrollbar-width: none;
 		height: calc(100vh - 120px);
+		max-width: var(--maxWidth);
 		@media (min-width: 640px) {
 			height: calc(100vh - 60px);
 			margin-left: 60px;
+		}
+		@media (min-width: 1536px) {
+			margin-left: 0;
+			margin: 0 auto;
 		}
 	}
 `
@@ -44,13 +50,13 @@ const App = () => {
 	const element = useRoutes(routes)
 
 	return (
-		<div>
+		<>
 			<GlobalStyle />
 			<StyledApp>
 				<Header />
 				<main>{element}</main>
 			</StyledApp>
-		</div>
+		</>
 	)
 }
 

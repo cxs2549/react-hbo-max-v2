@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import Bottombar from "./Bottombar/Bottombar";
@@ -18,7 +18,8 @@ const StyledHeader = styled.header`
   margin: 0 auto;
   color: #fff;
   background-color: var(--brandBlack);
-
+  position: relative;
+  z-index: 900;
   #icon {
     cursor: pointer;
   }
@@ -27,8 +28,21 @@ const StyledHeader = styled.header`
     color: var(--brandPurple);
     transition: 1s;
   }
-  nav {
+  #navWrapper {
     position: fixed;
+    width: 100%;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    height: 60px;
+  }
+  .active {
+    color: var(--brandPurple) !important;
+  }
+  .activeFade {
+    color: var(--brandBlack) !important;
+  }
+  nav {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -43,6 +57,20 @@ const StyledHeader = styled.header`
     border-bottom: 1px solid var(--muted);
     max-width: var(--maxWidth);
     margin: 0 auto;
+    #left {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      #searchIcon {
+        color: rgba(255, 255, 255, 0.8);
+        display: none;
+        font-size: 22px;
+
+        @media (min-width: 1536px) {
+          display: block;
+        }
+      }
+    }
     #logoContainer {
       position: absolute;
       left: 50%;
@@ -55,6 +83,35 @@ const StyledHeader = styled.header`
         height: 100%;
         object-fit: contain;
         filter: brightness(0) invert(1);
+      }
+    }
+    #right {
+      display: none;
+      @media (min-width: 1536px) {
+        display: block;
+      }
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        &:hover {
+          color: white;
+        }
+      }
+      button {
+        font-size: 16px;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        line-height: 20px;
+        letter-spacing: 0px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.8);
+        background-color: transparent;
+        border: none;
+        margin-left: 3rem;
+        cursor: pointer;
+        &:hover {
+          color: white;
+        }
       }
     }
     & > div {
@@ -87,28 +144,40 @@ const Header = () => {
   };
   return (
     <StyledHeader>
-      <nav className="">
-        <div>
-          <div onClick={handleClick}>
-            {isOpen ? (
-              <div className="purp">
-                <ion-icon id="icon" name="close-outline" size="large" />
-              </div>
-            ) : (
-              <ion-icon id="icon" name="menu-outline" size="large" />
-            )}
+      <div id="navWrapper">
+        <nav>
+          <div id="left">
+            <div onClick={handleClick}>
+              {isOpen ? (
+                <div className="purp">
+                  <ion-icon id="icon" name="close-outline" size="large" />
+                </div>
+              ) : (
+                <ion-icon id="icon" name="menu-outline" size="large" />
+              )}
+            </div>
+            <div>
+              <NavLink to="search" id="searchIcon" activeClassName="activeFade">
+                <ion-icon id="icon" name="search-outline"></ion-icon>
+              </NavLink>
+            </div>
+            <div />
           </div>
-          <div />
-        </div>
-        <div id="logoContainer">
-          <Link to="/">
-            <img src={logo} alt="" />
-          </Link>
-        </div>
-        {/* <div>right</div> */}
-      </nav>
+          <div id="logoContainer">
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
+          </div>
+          <div id="right">
+            <button>Subscribe Now</button>
+            <button>
+              <Link to="account">My Account</Link>
+            </button>
+          </div>
+        </nav>
+        <Drawer open={isOpen} clicked={handleClose} />
+      </div>
       <Sidebar clicked={handleClose} />
-      <Drawer open={isOpen} clicked={handleClose} />
       <Overlay open={isOpen} clicked={handleClose} />
       <Bottombar clicked={handleClose} />
     </StyledHeader>

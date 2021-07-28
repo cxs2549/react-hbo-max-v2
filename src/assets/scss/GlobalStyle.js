@@ -65,10 +65,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  main {
-    position: relative;
-    z-index: 1;
-  }
+ 
 
   h1 {
       font-size: 1.45rem;

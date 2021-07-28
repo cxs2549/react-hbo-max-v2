@@ -53,6 +53,11 @@ const StyledAccount = styled.div`
      }
     @media (min-width: 768px) {
       padding: 0 1.5rem;
+    
+    }
+    @media (min-width: 1536px) {
+      left: 0;
+      padding: 0;
     }
 
     #innerTop {
@@ -76,6 +81,7 @@ const StyledAccount = styled.div`
       }
       #topBottom {
         width: 100%;
+        max-width: var(--maxWidth);
         padding-bottom: 2rem;
         height: 74px;
         @media (min-width: 768px) {
@@ -83,6 +89,9 @@ const StyledAccount = styled.div`
         }
         @media (min-width: 1280px) {
           margin-left: 0;
+        }
+        @media (min-width: 1536px) {
+          margin: 0 auto;
         }
         #links {
           display: flex;
@@ -120,12 +129,13 @@ const StyledAccount = styled.div`
     padding-bottom: 2.5rem;
     width: 100%;
     padding-top: 2rem;
+    cursor: pointer;
     @media (min-width: 640px) {
       margin-left: -30px;
     }
    
-    @media (min-width: 1280px) {
-      
+    @media (min-width: 1536px) {
+      margin-left: 0;
     }
     #circle {
       height: 100px;
@@ -161,7 +171,7 @@ const Account = () => {
               <div id="circle">CS</div>
               <span>switch profiles</span>
             </div>
-            <div id="topBottom" className="">
+            <div id="topBottom">
               <div id="links">
                 <NavLink to="my-list" activeClassName="active">
                   My List
