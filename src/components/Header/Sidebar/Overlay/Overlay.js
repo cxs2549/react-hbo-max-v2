@@ -10,7 +10,8 @@ const StyledOverlay = styled.div`
   height: 100vh;
   background-color: rgba(0,0,0,0.5);
   transition: 1s;
-  z-index: 2;
+  z-index: -1;
+  /* display: none; */
   @media (min-width: 640px) {
     left: 60px;
   }
